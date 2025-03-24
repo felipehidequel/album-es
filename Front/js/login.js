@@ -26,7 +26,8 @@ document.querySelector('form').addEventListener('submit', async function(event) 
         const data = await response.json();
 
         if (data.status) {
-            localStorage.setItem('token', data.token);
+            localStorage.setItem("token", data.token);
+            localStorage.setItem("user", data.user)
             alert('Login bem-sucedido!');
             window.location.href = 'Inicio.html';
         } else {
