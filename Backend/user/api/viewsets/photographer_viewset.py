@@ -22,10 +22,10 @@ class LoginAPI(APIView):
         
         username = serializer.validated_data['username']
         password = serializer.validated_data['password']
-
+        
         user = authenticate(username=username, password=password)
         if not user:
             return Response({"status": False, "message": "Invalid credentials"}, status=401)
 
         token, _ = Token.objects.get_or_create(user=user)
-        return Response({"status": True, "token": str(token)})
+        return Response({"status": True, "token": str(token), "user": user.id})

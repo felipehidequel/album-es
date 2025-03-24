@@ -32,6 +32,10 @@ DEBUG = os.getenv('DEBUG', '1')
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
 CORS_ALLOWED_ORIGINS = os.getenv('CORS_ALLOWED_ORIGINS', '').split(',')
 
+CORS_ALLOW_CREDENTIALS = True  # Permite credenciais (cookies, tokens)
+CORS_ALLOWED_ORIGINS = os.getenv('CORS_ALLOWED_ORIGINS', '').split(',')  # Lista de origens permitidas (ex: ['http://localhost:3000'])
+CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS', '').split(',')  # Para proteção CSRF (opcional, mas recomendado)
+
 
 # Application definition
 
