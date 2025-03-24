@@ -15,5 +15,5 @@ urlpatterns = [
     path('api/users/', include('user.urls')),
 
     # Album
-    path('api/album/', include('album.urls')),
+    path('api/gallery/', include('gallery.urls')),
 ]
