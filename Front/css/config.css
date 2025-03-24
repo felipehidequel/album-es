@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.inicio-content{
+    max-height: 100vh;
+}
+header{
+    width: 85%;
+    height: 10vh;
+    justify-self: right;
+    box-shadow: 0 2px 5px gray;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+}
+.user-img{
+    position: fixed;
+    right: 15px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+}
+.user-img img{
+    width: 50px;
+}
+nav{
+    width: 300px;
+    height: 100vh;
+    z-index: 1;
+    position: fixed;
+    top: 0px;
+    background-color: #F4FAFF;
+    
+}
+.nav-bar img{
+    width: 150%;
+    padding-right: 50px;
+    position: relative;
+    top: -100px;
+    left: -50px;
+}
+.nav-bar ul{
+    padding-left: 20px;
+    list-style: none;
+    position: relative;
+    top: -100px;
+    height: 470px;
+}
+.nav-bar ul li{
+    margin: 10px;
+    background-color: white;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 10% 90%;
+    align-items: center;
+    height: 40px;
+    cursor: pointer;
+    
+}
+.nav-bar ul li a{
+    text-decoration: none;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    margin-left: 5px;
+}
+.nav-bar ul .sair{
+    margin-top: 220px;
+}
+.nav-bar ul #config{
+    background-color: #FFB200;
+}
+main{
+    height: 85vh;
+    width: 80%;
+    justify-content: right;
+    justify-self: right;
+}
+main section h2{
+    margin-left: 15px;
+    margin-top: 15px;
+    font-size: 40px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+main section .perfil{
+    height: 600px;
+    width: 400px;
+    justify-self: center;
+    box-shadow: 2px 2px 5px 5px gray;
+}
+main section .perfil .perfil-top input{
+    display: none;
+}
+main section .perfil .perfil-top{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    font-family: "Poppins", sans-serif;
+}
+main section .perfil .perfil-top img{
+    width: 140px;
+    height: 140px;
+}
+main section .perfil .perfil-top label{
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #F3F4F6;
+}
+main section .perfil .perfil-top label svg{
+    margin-left: 5px;
+}
+main section .perfil .perfil-top p{
+    font-size: 15px;
+}
+main section .form-perfil{
+    height: 65%;
+    justify-items: center;
+}
+main section .form-perfil form{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 390px;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+}
+main section .form-perfil form label{
+    margin-bottom: 5px;
+}
+main section .form-perfil form input{
+    width: 250px;
+    height: 40px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 15px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}::-webkit-inner-spin-button{
+    display: none;
+}
+main section .form-perfil form button{
+    width: 100px;
+    height: 40px;
+    position: relative;
+    left: 75px;
+    border: none;
+    border-radius: 5px;
+    background-color: #F3F4F6;
+    cursor: pointer;
+}
