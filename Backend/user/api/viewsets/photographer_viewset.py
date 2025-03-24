@@ -28,4 +28,4 @@ class LoginAPI(APIView):
             return Response({"status": False, "message": "Invalid credentials"}, status=401)
 
         token, _ = Token.objects.get_or_create(user=user)
-        return Response({"status": True, "token": str(token)})
+        return Response({"status": True, "token": str(token), "user": user.id})
