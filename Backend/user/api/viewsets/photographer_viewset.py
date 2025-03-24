@@ -7,25 +7,30 @@ from rest_framework.authtoken.models import Token
 from user.models import Photographer
 from user.api import PhotographerSerializer, LoginSerializer
 
+
 class PhotographerViewSet(viewsets.ModelViewSet):
     queryset = Photographer.objects.all()
     serializer_class = PhotographerSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]
 
 class LoginAPI(APIView):
-    permission_classes = [permissions.AllowAny]
-
     def post(self, request):
-        serializer = LoginSerializer(data=request.data)
-        if not serializer.is_valid():
-            return Response({"status": False, "errors": serializer.errors}, status=400)
+        data = request.data
+        serializer = LoginSerializer(data=data)
+        if not serializer.is_valid():                       
+            return Response({
+                "status" : False,
+                "data" : serializer.errors
+            })
         
-        username = serializer.validated_data['username']
-        password = serializer.validated_data['password']
-        
-        user = authenticate(username=username, password=password)
-        if not user:
+        username = serializer.data['username']
+        password = serializer.data['password']
+
+        user_obj = authenticate(username = username, password = password)
+        if not user_obj:
             return Response({"status": False, "message": "Invalid credentials"}, status=401)
 
-        token, _ = Token.objects.get_or_create(user=user)
-        return Response({"status": True, "token": str(token), "user": user.id})
+        token, _ = Token.objects.get_or_create(user=user_obj)
+        photographer = Photographer.objects.filter(user=user_obj).first()
+
+        return Response({"status": True, "token": str(token), "user": photographer.id})
