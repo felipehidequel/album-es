@@ -24,10 +24,11 @@ document.querySelector('form').addEventListener('submit', async function(event) 
         }
 
         const data = await response.json();
-
+        console.log(data);
         if (data.status) {
             localStorage.setItem("token", data.token);
             localStorage.setItem("user", data.user)
+            console.log(data)
             alert('Login bem-sucedido!');
             window.location.href = 'Inicio.html';
         } else {

@@ -12,7 +12,7 @@
         <header>
             <div class="user-img">
                 <img src="img/person_24px_outlined.svg" alt="user">
-                <span>User Name</span>  
+                <span id="usuario"></span>  
             </div>
         </header>
         <nav class="nav-bar">
@@ -52,11 +52,11 @@
                 <form>
                     <div class="form-group">
                       <label for="album-nome">Nome do Álbum</label>
-                      <input type="text" class="form-control" id="album-nome" placeholder="Nome do Álbum" required>
+                      <input type="text" class="form-control" id="album-nome" placeholder="Nome do Álbum">
                     </div>
                     <div class="form-group">
                       <label for="tag">Add Tag</label>
-                      <input type="text" class="form-control" id="tag" placeholder="Adicione uma tag" required>
+                      <input type="text" class="form-control" id="tag" placeholder="Adicione uma tag">
                     </div>
                   </form>
             </div>
@@ -78,18 +78,19 @@
                 </div>
                 <div class="input-file">
                     <small>Por favor carregar um álbum</small>
-                    <input type="file" accept=".jpeg, .jpg, .png">
+                    <input id="ipt-album" type="file" accept="img/*" multiple>
                 </div>
               </div>
               <div class="buttons-album">
                 <button id="exclui-album">Excluir</button>
-                <button id="salva-album">Salvar</button>
+                <button onclick="criarAlbum()" id="salva-album">Salvar</button>
               </div>
             </section>
         </main>
     </div>
+    <script src="js/criarAlbum.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 </html>
